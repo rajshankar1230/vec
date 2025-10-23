@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>International Projects</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    h1 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>International Projects</h1>
+  <% if (nprojects.length === 0) { %>
+    <p>No international projects found.</p>
+  <% } else { %>
+    <table>
+      <thead>
+        <tr>
+          <th>SN</th>
+          <th>Project Name</th>
+          <th>Client</th>
+          <th>Project Proponent</th>
+          <th>Country</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% nprojects.forEach(n => { %>
+          <tr>
+            <td><%= n.SN %></td>
+            <td><%= n.Nameofproject %></td>
+            <td><%= n.Client %></td>
+            <td><%= n.Projectproponent %></td>
+            <td><%= n.Country %></td>
+            <td><%= n.Status %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+</body>
+</html>
